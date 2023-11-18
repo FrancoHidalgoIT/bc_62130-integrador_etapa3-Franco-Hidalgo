@@ -1,4 +1,5 @@
 import models from '../models/productos.model.js'
+import handleError from '../utils/handleError.js'
 
 
 const obtenerProductos = async (req, res) => {
@@ -16,7 +17,7 @@ const obtenerProductos = async (req, res) => {
 
     } catch (error) {
         console.log('No se pudo acceder a los productos', error)
-        res.status(500).send('[obtenerProductos]: No se pudo acceder a los productos')
+        handleError(res, `[obtenerProductos] ${error.message} - No se pudo acceder a los productos`)
     }
    
 }
@@ -32,7 +33,8 @@ const guardarProducto = async (req, res) => {
 
     } catch (error) {
         console.log('Error al guardar un producto', error)
-        return res.status(500).send('Error al guardar un producto')
+        handleError(res, `[guardarProducto] ${error.message} - Error al guardar un producto` )
+       
     }
     
     
@@ -49,14 +51,15 @@ const actualizarProducto = async (req, res) => {
 
    } catch (error) {
     console.log('No se pudo actualizar el producto', error)
-    res.status(500).send('No se pudo actualizar el producto')
+    handleError(res, `[actualizarProducto] ${error.message} - No se pudo actualizar el producto`)
+       
    }
 }
 
 
 const eliminarProducto = async (req, res) => {
 
-    const { id } = req.params
+    const id = req.params.id //ObjetID
     console.log(id)
 
     try {
@@ -64,8 +67,8 @@ const eliminarProducto = async (req, res) => {
         res.status(200).json(productoBorrado)
 
     } catch (error) {
-        console.log('No se pudo', error)
-        res.status(500).send('No se pudo borrar el producto')
+        console.log('No se pudo eliminar el producto', error)
+        handleError(res, `[eliminarProducto] ${error.message} - No se pudo eliminar el producto`)
     }
 }
 
