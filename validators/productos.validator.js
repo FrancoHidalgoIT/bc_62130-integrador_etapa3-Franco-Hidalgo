@@ -8,7 +8,6 @@ const productoDeleteValidator = [
         .withMessage('Envío información incorrecta para eliminar el producto'),
     productosMiddleware
 ]
-
 const productoCreateValidator = [
     check('nombre')
         .notEmpty()
@@ -20,20 +19,19 @@ const productoCreateValidator = [
 // productoUpdateValidator
 const productoUpdateValidator = [
     check('id')
-        .isMongoId()
-        .withMessage('Envío información incorrecta para actualizar el producto')
-        .trim(),
+         .isMongoId() 
+        .withMessage('Envío información incorrecta para actualizar el producto'),
     productosMiddleware
 ]
 
 //productoReadOneValidator
 const productoReadOneValidator = [
     check('id')
-        .isMongoId()
-        .withMessage('Envío información incorrecta para leer el producto')
-        .trim(),
+        .optional()
+        .isMongoId() 
+        .withMessage('Envío información incorrecta para leer el producto'),
     productosMiddleware
-]
+] 
 
 export default {
     productoCreateValidator,

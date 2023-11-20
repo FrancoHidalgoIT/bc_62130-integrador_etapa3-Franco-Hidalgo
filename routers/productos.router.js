@@ -36,3 +36,6 @@ routerProductos.delete('/:id', validator.productoDeleteValidator, controller.eli
 
 
 export default routerProductos
+
+
+    
