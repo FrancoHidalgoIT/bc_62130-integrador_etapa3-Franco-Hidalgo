@@ -8,6 +8,7 @@ const productoDeleteValidator = [
         .withMessage('Envío información incorrecta para eliminar el producto'),
     productosMiddleware
 ]
+
 const productoCreateValidator = [
     check('nombre')
         .notEmpty()

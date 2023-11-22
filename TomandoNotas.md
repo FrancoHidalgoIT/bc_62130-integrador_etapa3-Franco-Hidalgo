@@ -28,3 +28,9 @@ Package                      Current   Wanted   Latest  Location                
 utilizando npm i @types/react@'y coloco la versión aquí'
 ```
 
+
+```sh
+mongorestore --uri "mongodb+srv://bootcamp-franco-h.fmpinrb.mongodb.net/" --apiVersion 1 --username francohidalgo2016 --db bc_ecommerce dump
+```
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    ME QUEDE EN EL MINUTO 1:26:35 TENGO QUE SUBIR EL FRONT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 

@@ -12,3 +12,21 @@ touch server.js README.md .env .env.example .gitignore && mkdir controllers mode
  4. le agregan el puerto=8080
  5. npm i
  6. npm run dev
+
+ 
+## Realizar el dump del proyecto
+
+ ```sh
+nos movemos a la carpeta donde queremos realizar el dump
+
+cd ../
+
+mongodump --db (nombre de la base de datos)
+  ```
+  
+
+ ## Restore de la base de datos local en la remota 
+
+ ```sh
+$ mongorestore --uri "mongodb+srv://bootcamp-franco-h.fmpinrb.mongodb.net/" --username francohidalgo2016 --nsInclude bc_ecommerce.* dump
+  ```

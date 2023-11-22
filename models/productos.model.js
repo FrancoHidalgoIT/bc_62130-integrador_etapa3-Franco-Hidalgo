@@ -61,7 +61,7 @@ const guardarProducto = async (productoNuevo) => {
 const modificarProducto = async (id, productoAEditar) => {
 
     try {
-        const productoModificado = await productosModel.findByIdAndUpdate(id, productoAEditar)
+        const productoModificado = await productosModel.findByIdAndUpdate(id, productoAEditar, {new: true}) //new: true, me retorna el producto actualizado
         return productoModificado
 
     } catch (error) {
