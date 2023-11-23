@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import handleMongoId from '../utils/handleMongoId'
+import handleMongoId from '../utils/handleMongoId.js'
 
 // CREAMOS EL ESQUEMA
 
