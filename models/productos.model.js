@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import handleMongoId from '../utils/handleMongoId'
 
 // CREAMOS EL ESQUEMA
 
@@ -37,7 +38,7 @@ const leerProducto = async (id) => {
 const leerProductos = async () => {
     try {
         const productos = await productosModel.find({})
-        return productos
+        return handleMongoId (productos)
     } catch (error) {
         console.log('[leerProductos]: Algo salió mal', error)
     }
@@ -49,7 +50,7 @@ const guardarProducto = async (productoNuevo) => {
     try {
         const productoAlmacenado = new productosModel(productoNuevo)
         await productoAlmacenado.save()
-        return productoAlmacenado
+        return handleMongoId(productoAlmacenado)
 
     } catch (error) {
         console.log('Error (Guardar productos), no se puede guardar en la DB', error)
@@ -77,7 +78,7 @@ const borrarProducto = async (id) => {
 
     try {
         const productoBorrado = await productosModel.findByIdAndDelete(id)
-        return handleMongoId (productoBorrado)
+        return handleMongoId(productoBorrado)
     } catch (error) {
         console.log ('Error al eliminar producto en la DB', error)
     }

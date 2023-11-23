@@ -48,7 +48,6 @@ db.productos.insertMany (
             "stock": 4,
             "marca": "Samsung",
             "categoria": "celulares",
-            "id": 5,
             "envio": true
           },
           {
