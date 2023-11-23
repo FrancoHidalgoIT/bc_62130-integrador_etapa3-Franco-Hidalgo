@@ -62,7 +62,7 @@ const modificarProducto = async (id, productoAEditar) => {
 
     try {
         const productoModificado = await productosModel.findByIdAndUpdate(id, productoAEditar, {new: true}) //new: true, me retorna el producto actualizado
-        return productoModificado
+        return handleMongoId(productoModificado)
 
     } catch (error) {
         console.log('ERROR[modificarProducto]: No se pudo actualizar el producto')
@@ -77,7 +77,7 @@ const borrarProducto = async (id) => {
 
     try {
         const productoBorrado = await productosModel.findByIdAndDelete(id)
-        return productoBorrado
+        return handleMongoId (productoBorrado)
     } catch (error) {
         console.log ('Error al eliminar producto en la DB', error)
     }
